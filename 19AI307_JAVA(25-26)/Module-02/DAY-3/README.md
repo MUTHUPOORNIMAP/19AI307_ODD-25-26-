@@ -2,22 +2,35 @@
 
 ## QUESTION:
 
-Display Factors of a Number
+Write a Java program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.
 
 ## AIM:
 
-To write a Java program that reads an integer from the user and displays all the factors of the given number.
+To write a Java program that defines a class BankAccount with private attributes accountNumber and balance, and provides public getter and setter methods to access and modify these values.
+
 
 ## ALGORITHM :
-1. Start the program and read an integer n from the user.
 
-2.Loop from 1 to n and check if each number i divides n exactly (i.e., n % i == 0).
+Define a class BankAccount with two private instance variables:
 
-3.If yes, print i as a factor.
+ String accountNumber
 
-4.Continue the loop until all factors are printed.
+ double balance
+Create public getter and setter methods for both variables:
 
-5.End the program.
+getAccountNumber() and setAccountNumber()
+
+getBalance() and setBalance()
+
+In the main() method, create a Scanner object to read input from the user.
+
+Create an object of the BankAccount class.
+
+Read the account number and balance from the user and store them using setter methods.
+
+Retrieve and print the stored values using getter methods.
+
+Close the Scanner and end the program.
 
 
 
@@ -27,26 +40,54 @@ To write a Java program that reads an integer from the user and displays all the
  ```
 /*
 Program to implement a Access Specifiers using Java
-Developed by: 
-RegisterNumber:  
+Developed by: Muthu Poornima P
+RegisterNumber:  212224240099
 */
 ```
 
 ## SOURCE CODE:
 ```
+
 import java.util.Scanner;
 
-public class Factors {
+class BankAccount {
+   
+    private String accountNumber;
+    private double balance;
+
+    
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+   
+    public double getBalance() {
+        return balance;
+    }
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+}
+
+public class prog {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
 
-        System.out.print("Factors: ");
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) { 
-                System.out.print(i + " ");
-            }
-        }
+        BankAccount account = new BankAccount();
+
+        String accNo = sc.nextLine();
+        double bal = sc.nextDouble();
+
+        account.setAccountNumber(accNo);
+        account.setBalance(bal);
+
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Balance: " + account.getBalance());
+
+        sc.close();
     }
 }
 ```
@@ -58,9 +99,10 @@ public class Factors {
 
 ## OUTPUT:
 
-<img width="783" height="324" alt="image" src="https://github.com/user-attachments/assets/53c7bb5b-0013-4e12-83f8-4a7b0d03d13c" />
+<img width="826" height="465" alt="image" src="https://github.com/user-attachments/assets/e3317ccc-645a-49ea-b2c7-ca0d7d1cdbb4" />
+
 
 
 ## RESULT:
 
-Therefore, the program successfully reads a number from the user and computes its factors.
+Therfore the program successfully stores account details using setter methods and retrieves them using getter methods.
