@@ -2,25 +2,30 @@
 
 ## QUESTION:
 
-Write a Java program to find the index of a given element in an array
+Create a class Employee with method display(). Inside display(), return the current object using this. Create another method that calls display().printName()
 
 ## AIM:
-To write a Java program that reads an array of integers and finds the index of a given element within the array.
+
+To create an Employee class where the display() method returns the current object using this, and demonstrate calling display().printName() from another method.
+
 
 ## ALGORITHM :
 
- 1.Start the program and read the size of the array n.
+Create a class Employee with a variable name.
 
-2.Read n integer elements and store them in the array a[ ].
+Write a method setName() to assign value to name.
 
-3.Read the element x whose index needs to be found.
+Write a method display() that returns the current object using return this;.
 
-4.Traverse the array from index 0 to n-1:
+Write a method printName() to print the employee name.
 
- If a[i] == x, print the index i and terminate the program.
-5.If the loop finishes without a match, print "Element not found".
+Add another method show() that internally calls display().printName().
 
-6.End the program.
+In the main() method, read the employee name from the user.
+
+7.Create an Employee object and set the name.
+
+Call both display().printName() and show() to demonstrate method chaining.
 
 
 
@@ -40,26 +45,30 @@ RegisterNumber:
 ```
 import java.util.Scanner;
 
-public class Main {
+class Employee {
+    String name;
+
+    void setName(String name) {
+        this.name = name;  
+    }
+
+    Employee display() {
+        return this;  
+    }
+
+    void printName() {
+        System.out.println("Employee Name: " + name);
+    }
+}
+
+class prog {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int a[] = new int[n];
-        for (int i = 0; i < n; i++) 
-        {
-        a[i] = sc.nextInt();
-        }
-        
-        int x = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            if (a[i] == x) {
-                System.out.println(i);
-                return;
-            }
-            
-        }
-        System.out.println("Element not found");
-        
+        Scanner scanner = new Scanner(System.in);
+        String inputName = scanner.nextLine();
+
+        Employee emp = new Employee();
+        emp.setName(inputName);
+        emp.display().printName();  
     }
 }
 ```
@@ -70,9 +79,10 @@ public class Main {
 
 ## OUTPUT:
 
-<img width="558" height="590" alt="image" src="https://github.com/user-attachments/assets/163a2f5c-e4ad-4736-90e9-1cef0ba59138" />
+<img width="686" height="326" alt="image" src="https://github.com/user-attachments/assets/d926fb7e-f675-416c-95f1-9980fb44451e" />
+
 
 
 ## RESULT:
 
-Therefore the program successfully searches the array for the given element.
+Therefore the program successfully returns the current object using this inside the display() method.
