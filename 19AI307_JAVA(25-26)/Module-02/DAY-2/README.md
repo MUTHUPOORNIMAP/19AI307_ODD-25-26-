@@ -1,35 +1,30 @@
 # Ex.No:2(B) METHODS
 
 ## QUESTION:
-A pirate ship has a code lock that only opens if:
 
-1)The input code is even, and
-
-2)If it is less than 100, say "Weak Code".
-
-3)If it is between 100 and 999, say "Strong Code".
-
-4)If the code is odd, deny access.
+Define a class Car with brand (String), color (String), and year (int). Create 2 different objects of Car Assign values to attributes. Print the details of both cars.import java.util.Scanner;
 
 ## AIM:
 
-To write a Java program that accepts a code number and determines the security level based on the given conditions:
-
-If the code is even and less than 100 → Display "Weak Code"
-If the code is even and between 100 and 999 → Display "Strong Code"
-Otherwise → Display "Access Denied"
-
+To define a class Car with attributes brand, color, and year; create two objects of the class; assign values to their attributes; and print the details of both cars.
 
 ## ALGORITHM :
 
-Start the program.
-Create a Scanner object to read input from the user.
-Read an integer value from the user and store it in variable 'code'.
-Check if 'code' is even (code % 2 == 0): a. If 'code' is less than 100: - Print "Weak Code". b. Else if 'code' is between 100 and 999 (inclusive): - Print "Strong Code". c. Else: - Print "Access Denied".
-If 'code' is odd:
-Print "Access Denied".
-End the program.
+Define a class Car with three data members:
 
+String brand String color int year and a method printDetails() to display these values.
+
+In the main() method, create a Scanner object to read user inputs.
+
+Create the first object car1 and read its brand, color, and year from the user.
+
+Create the second object car2 and read its brand, color, and year.
+
+Call printDetails() for car1 to display its information.
+
+Call printDetails() for car2 to display its information.
+
+7.Close the scanner and end the program.
 
 
 
@@ -38,7 +33,7 @@ End the program.
  ```
 /*
 Program to implement a Methods using Java
-Developed by: 
+Developed by: Muthu Poornima P
 RegisterNumber:  
 */
 ```
@@ -49,24 +44,39 @@ RegisterNumber:
 ```
 import java.util.Scanner;
 
-public class PirateCodeLock {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int code = sc.nextInt();
+class Car {
+    String brand;
+    String color;
+    int year;
 
-        if (code % 2 == 0) {
-            if (code < 100) {
-                System.out.println("Weak Code");
-            } else if (code >= 100 && code <= 999) {
-                System.out.println("Strong Code");
-            }
-            else
-            {
-                System.out.println("Access Denied");
-            }
-        } else {
-            System.out.println("Access Denied");
-        }
+    void printDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Color: " + color);
+        System.out.println("Year: " + year);
+    }
+}
+
+class prog {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        Car car1 = new Car();
+        car1.brand = scanner.nextLine();
+        car1.color = scanner.nextLine();
+        car1.year = scanner.nextInt();
+        scanner.nextLine();
+
+        
+        Car car2 = new Car();
+        car2.brand = scanner.nextLine();
+        car2.color = scanner.nextLine();
+        car2.year = scanner.nextInt();
+
+        car1.printDetails();
+        car2.printDetails();
+
+        scanner.close();
     }
 }
 
@@ -77,10 +87,11 @@ public class PirateCodeLock {
 
 ## OUTPUT:
 
-<img width="1253" height="395" alt="image" src="https://github.com/user-attachments/assets/d8a25b94-7fc9-418b-a149-a3fa4bf99a6c" />
 
+<img width="597" height="685" alt="image" src="https://github.com/user-attachments/assets/ae65a352-fdee-421c-b8dc-a04bf5bfed6a" />
 
 
 ## RESULT:
 
 Therefore,the program has been executed successfully.
+
