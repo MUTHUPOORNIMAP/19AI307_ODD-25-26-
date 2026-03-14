@@ -2,29 +2,32 @@
 
 ## QUESTION:
 
-Write a Java program to find the index of a given element in an array
+Write a class that uses a constructor to initialize variables and overrides toString() method.
 
 ## AIM:
 
-To write a Java program that reads an array of integers and finds the index of a given element within the array.
+To write a Java program that initializes object variables using a constructor and overrides the toString() method to display object details in a readable format.
 
 ## ALGORITHM :
+Define a class Student with two instance variables:
 
-1.Start the program and read the size of the array n.
+String name
 
-2.Read n integer elements and store them in the array a[ ].
+int age
 
-3.Read the element x whose index needs to be found.
+Create a parameterized constructor to initialize these variables.
 
-4.Traverse the array from index 0 to n-1:
-```
- If a[i] == x, print the index i and terminate the program.
-```
-5.If the loop finishes without a match, print "Element not found".
+Override the toString() method to return the student details in a formatted string.
 
-6.End the program.
+In the main() method:
 
+Read the name and age from the user.
 
+Create a Student object using the constructor.
+
+Print the object, which automatically calls the overridden toString() method.
+
+End the program.
 
 
 
@@ -32,8 +35,8 @@ To write a Java program that reads an array of integers and finds the index of a
  ```
 /*
 Program to implement a Variable scope and Constructor using Java
-Developed by: 
-RegisterNumber:  
+Developed by: Muthu Poornima P
+RegisterNumber:  212224240099
 */
 ```
 
@@ -42,28 +45,32 @@ RegisterNumber:
 ```
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int a[] = new int[n];
-        for (int i = 0; i < n; i++) 
-        {
-        a[i] = sc.nextInt();
-        }
-        
-        int x = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            if (a[i] == x) {
-                System.out.println(i);
-                return;
-            }
-            
-        }
-        System.out.println("Element not found");
-        
+class Student {
+    String name;
+    int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{name='" + name + "', age=" + age + "}";
     }
 }
+
+public class StudentDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        int age = scanner.nextInt();
+
+        Student student = new Student(name, age);
+        System.out.println(student.toString());
+    }
+}
+ 
 ```
 
 
@@ -72,10 +79,12 @@ public class Main {
 
 ## OUTPUT:
 
-<img width="558" height="590" alt="image" src="https://github.com/user-attachments/assets/7cfcc1a8-3da2-40be-abbe-bbfe207bc320" />
+<img width="896" height="395" alt="image" src="https://github.com/user-attachments/assets/478c35ba-0c24-4419-be98-1f1ab065d89a" />
+
 
 
 
 ## RESULT:
 
-Therefore the program successfully searches the array for the given element.
+Therefore the program successfully creates a student object using the constructor.
+
